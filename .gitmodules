@@ -16,3 +16,9 @@
 [submodule "modules/cache"]
 	path = modules/cache
 	url = git://github.com/kohana/cache.git
+[submodule "modules/minion-core"]
+	path = modules/minion-core
+	url = git://github.com/kohana-minion/core.git
+[submodule "modules/minion-migrations"]
+	path = modules/minion-migrations
+	url = git://github.com/kohana-minion/tasks-migrations.git
