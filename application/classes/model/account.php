@@ -7,7 +7,7 @@
  * @copyright  (c) 2011 Jeremy Bush
  * @license    http://github.com/zombor/Bucket-App/raw/master/LICENSE
  */
-class Model_Account extends AutoModeler
+class Model_Account extends AutoModeler_UUID
 {
 	protected $_table_name = 'accounts';
 

@@ -22,3 +22,6 @@
 [submodule "modules/minion-migrations"]
 	path = modules/minion-migrations
 	url = git://github.com/kohana-minion/tasks-migrations.git
+[submodule "modules/uuid"]
+	path = modules/uuid
+	url = git://github.com/shadowhand/uuid.git

@@ -98,13 +98,14 @@ Kohana::$config->attach(new Config_File);
  */
 Kohana::modules(
 	array(
-		'auth'       => MODPATH.'auth',       // Basic authentication
-		'cache'      => MODPATH.'cache',      // Caching with multiple backends
-		'database'   => MODPATH.'database',   // Database access
-		'kostache'   => MODPATH.'kostache',
-		'auto-modeler' => MODPATH.'auto-modeler',
-		'minion-core'   => MODPATH.'minion-core',
+		'auth'              => MODPATH.'auth',       // Basic authentication
+		'cache'             => MODPATH.'cache',      // Caching with multiple backends
+		'database'          => MODPATH.'database',   // Database access
+		'kostache'          => MODPATH.'kostache',
+		'auto-modeler'      => MODPATH.'auto-modeler',
+		'minion-core'       => MODPATH.'minion-core',
 		'minion-migrations' => MODPATH.'minion-migrations',
+		'uuid'              => MODPATH.'uuid',
 	)
 );
 
