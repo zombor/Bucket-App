@@ -1,0 +1,30 @@
+!Type:Bank
+D7/15/11
+PDeposit
+Mbonus
+T1,103.01
+NDEP
+CX
+LSalary
+^
+D7/12/11
+PTesting 1
+T-96.36
+NWITHD
+CX
+LGroceries
+^
+D7/12/11
+PTesting 3
+T-9.47
+NWITHD
+CX
+LGroceries
+^
+D7/9/11
+PTesting 4
+T-552.00
+NWITHD
+CX
+LTest
+^
