@@ -57,7 +57,8 @@ class Model_Qif extends Model
 					// Make a new account if not found
 					if ( ! $account->loaded())
 					{
-						
+						$account->name = $data;
+						$account->save();
 					}
 
 					$transactions[++$index] = new Model_Transaction;
@@ -87,12 +88,13 @@ class Model_Qif extends Model
 					break;
 				case Model_Qif::CODE_CATEGORY:
 					// Try and find a category
-					$account = Model::factory('transaction_category', $data);
+					$category = Model::factory('transaction_category', $data);
 
 					// If not found, create it
-					if ( ! $account->loaded())
+					if ( ! $category->loaded())
 					{
-						
+						$category->name = $data;
+						$category->save();
 					}
 
 					break;

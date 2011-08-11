@@ -9,7 +9,7 @@
  */
 class Model_Transaction_Category extends AutoModeler
 {
-	protected $_table_name = 'transactions';
+	protected $_table_name = 'transaction_categories';
 
 	protected $_data = array(
 		'id' => NULL,
