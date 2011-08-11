@@ -103,8 +103,8 @@ Kohana::modules(
 		'database'   => MODPATH.'database',   // Database access
 		'kostache'   => MODPATH.'kostache',
 		'auto-modeler' => MODPATH.'auto-modeler',
-		'minion-core'   => MODPATH.'kostache',
-		'minion-migrations' => MODPATH.'kostache',
+		'minion-core'   => MODPATH.'minion-core',
+		'minion-migrations' => MODPATH.'minion-migrations',
 	)
 );
 
