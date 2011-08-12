@@ -53,15 +53,10 @@ class Model_Account extends AutoModeler_UUID
 			$date = time();
 		}
 
-		$total = db::select(db::expr('SUM(`transactions`.`amount`) as total'))
-			->from($this->_table_name)
-			->join(Model::factory('transaction')->get_table_name())
-			->on(
-				Model::factory('transaction')->get_table_name().'.account_id',
-				'=',
-				db::expr('"'.$this->id.'"')
-			)
+		$total = db::select(db::expr('SUM(amount) as total'))
+			->from(Model::factory('transaction')->get_table_name())
 			->where('date', '<=', $date)
+			->where('account_id', '=', $this->id)
 			->as_object()
 			->execute()->current()->total;
 

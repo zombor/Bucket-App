@@ -36,4 +36,28 @@ class Model_Transaction_Category extends AutoModeler_UUID
 			);
 		}
 	}
+
+	/**
+	 * Returns the balance for this account on a specific time.
+	 * 
+	 * @param int $date unix timestamp date to get balance
+	 *
+	 * @return float
+	 */
+	public function balance($date = NULL)
+	{
+		if (NULL === $date)
+		{
+			$date = time();
+		}
+
+		$total = db::select(db::expr('SUM(amount) as total'))
+			->from(Model::factory('transaction')->get_table_name())
+			->where('date', '<=', $date)
+			->where('category_id', '=', $this->id)
+			->as_object()
+			->execute()->current()->total;
+
+		return $total;
+	}
 }
