@@ -1,0 +1,11 @@
+<project name="Bucket-App" default="phpunit" basedir=".">
+	<target name="phpunit">
+		<exec dir="${basedir}" executable="./minion" failonerror="true">
+			<arg line="migrations:run --down" />
+		</exec>
+		<exec dir="${basedir}" executable="./minion" failonerror="true">
+			<arg line="migrations:run" />
+		</exec>
+		<exec dir="${basedir}" executable="phpunit" failonerror="true" />
+	</target>
+</project>
