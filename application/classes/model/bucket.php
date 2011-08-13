@@ -1,6 +1,15 @@
 <?php
 /**
- * Model for Transaction Category Business Logic
+ * Model for Transaction Category Business Logic. Glues together transactions
+ * and bucket transactions
+ * 
+ * The basiscs of an envelope budgeting system:
+ * 
+ * Positive transactions are assigned to INCOME buckets.
+ * Money moves between buckets from an INCOME bucket to an EXPENSE bucket.
+ * Negative transactions are assigned to EXPENSE buckets.
+ * 
+ * Money can also move between EXPENSE buckets to re-assign money for spending.
  *
  * @package    Bucket
  * @author     Jeremy Bush
@@ -9,11 +18,15 @@
  */
 class Model_Bucket extends AutoModeler_UUID
 {
+	const INCOME  = 1;
+	const EXPENSE = 2;
+
 	protected $_table_name = 'buckets';
 
 	protected $_data = array(
 		'id' => NULL,
 		'name' => '',
+		'type_id' => Model_Bucket::INCOME,
 	);
 
 	/**
@@ -38,7 +51,7 @@ class Model_Bucket extends AutoModeler_UUID
 	}
 
 	/**
-	 * Returns the balance for this account on a specific time.
+	 * Returns the balance for this bucket on a specific time.
 	 * 
 	 * @param int $date unix timestamp date to get balance
 	 *
@@ -51,13 +64,21 @@ class Model_Bucket extends AutoModeler_UUID
 			$date = time();
 		}
 
-		$total = db::select(db::expr('SUM(amount) as total'))
+		// to get the total, we need the transaction total (negative),
+		// plus the bucket total (positive)
+		$transaction_total = -(db::select(db::expr('SUM(amount) as total'))
 			->from(Model::factory('transaction')->get_table_name())
 			->where('date', '<=', $date)
 			->where('bucket_id', '=', $this->id)
 			->as_object()
+			->execute()->current()->total);
+
+		$bucket_total = db::select(db::expr('SUM(amount) as total'))
+			->from(Model::factory('bucket_transaction')->get_table_name())
+			->where('date', '<=', $date)
+			->as_object()
 			->execute()->current()->total;
 
-		return $total;
+		return (float) $transaction_total+$bucket_total;
 	}
 }
