@@ -18,7 +18,7 @@ class Model_Transaction extends AutoModeler_UUID
 		'memo' => '',
 		'cleared_status' => '',
 		'payee' => '',
-		'category_id' => '',
+		'bucket_id' => '',
 		'account_id' => '',
 	);
 }

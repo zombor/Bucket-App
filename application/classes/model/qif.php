@@ -88,7 +88,7 @@ class Model_Qif extends Model
 					break;
 				case Model_Qif::CODE_CATEGORY:
 					// Try and find a category
-					$category = new Model_Transaction_Category($data);
+					$category = new Model_Bucket($data);
 
 					// If not found, create it
 					if ( ! $category->loaded())

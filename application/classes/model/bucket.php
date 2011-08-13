@@ -7,9 +7,9 @@
  * @copyright  (c) 2011 Jeremy Bush
  * @license    http://github.com/zombor/Bucket-App/raw/master/LICENSE
  */
-class Model_Transaction_Category extends AutoModeler_UUID
+class Model_Bucket extends AutoModeler_UUID
 {
-	protected $_table_name = 'transaction_categories';
+	protected $_table_name = 'buckets';
 
 	protected $_data = array(
 		'id' => NULL,
@@ -54,7 +54,7 @@ class Model_Transaction_Category extends AutoModeler_UUID
 		$total = db::select(db::expr('SUM(amount) as total'))
 			->from(Model::factory('transaction')->get_table_name())
 			->where('date', '<=', $date)
-			->where('category_id', '=', $this->id)
+			->where('bucket_id', '=', $this->id)
 			->as_object()
 			->execute()->current()->total;
 

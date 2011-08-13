@@ -9,7 +9,7 @@
  *
  * @group Bucket_Core
  */
-class Model_Transaction_Category_Test extends PHPUnit_Framework_TestCase
+class Model_Bucket_Test extends PHPUnit_Framework_TestCase
 {
 	/**
 	 * Tests that account balance works
@@ -18,7 +18,7 @@ class Model_Transaction_Category_Test extends PHPUnit_Framework_TestCase
 	 */
 	public function test_balance()
 	{
-		$category = new Model_Transaction_Category('Testing');
+		$category = new Model_Bucket('Testing');
 
 		if ( ! $category->loaded())
 		{
@@ -30,7 +30,7 @@ class Model_Transaction_Category_Test extends PHPUnit_Framework_TestCase
 		{
 			$trans = new Model_Transaction;
 			$trans->amount = $i;
-			$trans->category_id = $category->id;
+			$trans->bucket_id = $category->id;
 			$trans->date = $i;
 			$trans->save();
 		}
