@@ -25,3 +25,9 @@
 [submodule "modules/uuid"]
 	path = modules/uuid
 	url = git://github.com/shadowhand/uuid.git
+[submodule "modules/oauth2"]
+	path = modules/oauth2
+	url = git@github.com:zombor/kohana-oauth2.git
+[submodule "modules/api"]
+	path = modules/api
+	url = git@github.com:zombor/kohana-api.git
