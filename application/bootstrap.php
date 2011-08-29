@@ -107,6 +107,7 @@ Kohana::modules(
 		'minion-migrations' => MODPATH.'minion-migrations',
 		'uuid'              => MODPATH.'uuid',
 		'oauth'             => MODPATH.'oauth2',
+		'api'               => MODPATH.'api',
 	)
 );
 
