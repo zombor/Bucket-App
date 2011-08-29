@@ -49,6 +49,26 @@ class Controller_API_Buckets extends Controller_API
 	}
 
 	/**
+	 * GET /api/buckets/:id/balance/:param
+	 *
+	 * @return null
+	 */
+	public function get_balance()
+	{
+		$id = $this->request->param('id');
+		$date = $this->request->param('param');
+
+		$bucket = new Model_Bucket($id);
+
+		if ( ! $bucket->loaded())
+		{
+			throw new HTTP_Exception_404('Bucket Not Found!');
+		}
+
+		$this->_response_payload = $bucket->balance($date);
+	}
+
+	/**
 	 * POST /api/buckets
 	 *
 	 * @return null
