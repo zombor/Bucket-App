@@ -28,7 +28,9 @@ class Migration_Bucket_20110829065635 extends Minion_Migration_Base {
 
 		// Get an access token for the website to use the api
 		Model_OAuth2_Access_Token::$lifetime = 10 * 365 * 24 * 60 * 60; // 10 years
-		$response = Request::factory('oauth2/token')->query(
+		$response = Request::factory('oauth2/token')->method(
+			HTTP_Request::POST
+		)->post(
 			array(
 				'client_id' => $client_id,
 				'client_secret' => $client_secret,
@@ -37,7 +39,7 @@ class Migration_Bucket_20110829065635 extends Minion_Migration_Base {
 		)->execute();
 
 		$response = json_decode($response->body());
-
+var_dump($response);
 		Minion_CLI::write(
 			'Your access_token is: '.$response->access_token.
 			'. Keep this secret!', 'green'
