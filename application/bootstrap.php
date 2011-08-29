@@ -98,6 +98,7 @@ Kohana::$config->attach(new Config_File);
  */
 Kohana::modules(
 	array(
+		'application'       => MODPATH.'bucket-application',
 		'auth'              => MODPATH.'auth',       // Basic authentication
 		'cache'             => MODPATH.'cache',      // Caching with multiple backends
 		'database'          => MODPATH.'database',   // Database access
@@ -117,6 +118,6 @@ Kohana::modules(
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'welcome',
+		'controller' => 'home',
 		'action'     => 'index',
 	));
