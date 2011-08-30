@@ -9,7 +9,7 @@
  */
 abstract class Controller_Website extends Controller
 {
-	protected $_api_token;
+	protected $_oauth_client;
 
 	public function before()
 	{
@@ -32,14 +32,11 @@ abstract class Controller_Website extends Controller
 			$this->view = new $view_name;
 		}
 
-		$this->_api_token = Kohana::$config->load('bucket.oauth2-token');
+		$this->_oauth_client = OAuth2_Consumer::factory(
+			'bucket', OAuth2::GRANT_TYPE_CLIENT_CREDENTIALS
+		);
 
-		if ( ! $this->_api_token)
-		{
-			throw new Kohana_Exception(
-				'You must set the api key for this application!'
-			);
-		}
+		$this->view->oauth_client = $this->_oauth_client;
 	}
 
 	public function after()

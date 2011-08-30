@@ -1,1 +1,18 @@
-<p>Hello</p>
+<h2>Accounts</h2>
+<ul>
+	{{#accounts}}<li>{{name}} - ${{balance}}</li>{{/accounts}}
+</ul>
+<h2>Buckets</h2>
+<ul>
+	{{#buckets}}<li>{{name}} - ${{balance}}</li>{{/buckets}}
+</ul>
+<h2>Transactions</h2>
+<ul>
+	{{#transactions}}
+	<li>{{account_name}}
+		<ul>
+			{{#account_transactions}}<li>{{date}} - {{payee}} - ${{amount}}</li>{{/account_transactions}}
+		</ul>
+	</li>
+	{{/transactions}}
+</ul>

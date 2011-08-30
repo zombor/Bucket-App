@@ -9,6 +9,8 @@
  */
 abstract class Kostache extends Kohana_Kostache
 {
+	public $oauth_client;
+
 	/**
 	 * Gets the application's base url
 	 *

@@ -69,6 +69,27 @@ class Controller_API_Buckets extends Controller_API
 	}
 
 	/**
+	 * GET /api/buckets/balance
+	 *
+	 * @return null
+	 */
+	public function get_balance_collection()
+	{
+		$buckets = Model::factory('bucket')->load(NULL, NULL);
+		$date = $this->request->query('date');
+
+		$output = array();
+		foreach ($buckets as $bucket)
+		{
+			$output[] = $bucket->as_array()+array(
+				'balance' => $bucket->balance($date)
+			);
+		}
+
+		$this->_response_payload = $output;
+	}
+
+	/**
 	 * POST /api/buckets
 	 *
 	 * @return null

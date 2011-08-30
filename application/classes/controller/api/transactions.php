@@ -49,6 +49,34 @@ class Controller_API_Transactions extends Controller_API
 	}
 
 	/**
+	 * GET /api/transactions/account?account_id=<id>
+	 *
+	 * @return null
+	 */
+	public function get_account_collection()
+	{
+		$account_id = $this->request->query('account_id');
+
+		if ( ! $account_id)
+		{
+			throw new Kohana_Exception('You must specify an account_id!');
+		}
+
+		$transactions = Model::factory('transaction')->load(
+			db::select()->where('account_id', '=', $account_id),
+			NULL
+		);
+
+		$output = array();
+		foreach ($transactions as $transaction)
+		{
+			$output[] = $transaction->as_array();
+		}
+
+		$this->_response_payload = $output;
+	}
+
+	/**
 	 * POST /api/transactions
 	 *
 	 * @return null

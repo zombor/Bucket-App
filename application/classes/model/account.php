@@ -60,6 +60,6 @@ class Model_Account extends AutoModeler_UUID
 			->as_object()
 			->execute()->current()->total;
 
-		return $total;
+		return number_format($total, 2);
 	}
 }
