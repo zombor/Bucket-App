@@ -23,7 +23,13 @@ class Migration_Bucket_20110829065635 extends Minion_Migration_Base {
 		)->execute($db);
 
 		Minion_CLI::write(
-			'Your client_id is: '.$client_id.'. Keep this secret!', 'green'
+			'client_id: '.$client_id, 'green'
+		);
+		Minion_CLI::write(
+			'client_secret: '.$client_secret, 'green'
+		);
+		Minion_CLI::write(
+			'You need to put these values into modules/bucket-application/config/oauth2.php!!!!', 'yellow'
 		);
 	}
 
