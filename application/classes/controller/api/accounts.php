@@ -69,6 +69,27 @@ class Controller_API_Accounts extends Controller_API
 	}
 
 	/**
+	 * GET /api/accounts/balance
+	 *
+	 * @return null
+	 */
+	public function get_balance_collection()
+	{
+		$accounts = Model::factory('account')->load(NULL, NULL);
+		$date = $this->request->query('date');
+
+		$output = array();
+		foreach ($accounts as $account)
+		{
+			$output[] = $account->as_array()+array(
+				'balance' => $account->balance($date)
+			);
+		}
+
+		$this->_response_payload = $output;
+	}
+
+	/**
 	 * POST /api/accounts
 	 *
 	 * @return null

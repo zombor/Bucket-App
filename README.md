@@ -6,7 +6,7 @@ A self-hosted, web based envelop budgeting app written in Kohana. It's in heavy 
 
 To install, setup a new virtual host in your webserver and clone this repo (make sure to use --recursive!). Then run `./minion migrations:run`
 
-This will give you an api key you will need to install into `application/config/bucket.php`.
+This will give you an `client id` and `client_secret` and you will need to install into `modules/bucket-application/config/oauth2.php`.
 
 ## Tests
 
