@@ -11,6 +11,13 @@ class View_Home_Index extends Kostache_Layout
 {
 	public $title = 'Bucket-App';
 
+	protected $_partials = array(
+		'accounts' => 'account/list',
+		'buckets' => 'bucket/list',
+		'transactions' => 'transaction/list',
+		'transaction' => 'transaction/transaction',
+	);
+
 	/**
 	 * Gets all accounts with their balance
 	 *
@@ -89,5 +96,17 @@ class View_Home_Index extends Kostache_Layout
 		}
 
 		return $output;
+	}
+
+	/**
+	 * Gets the data for adding a transaction
+	 *
+	 * @return array
+	 */
+	public function add_transaction()
+	{
+		$transaction = new Model_Transaction;
+
+		return $transaction->as_array();
 	}
 }

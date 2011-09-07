@@ -1,0 +1,9 @@
+<ul>
+	{{#transactions}}
+	<li>{{account_name}}
+		<ul>
+			{{#account_transactions}}{{>transaction}}{{/account_transactions}}
+		</ul>
+	</li>
+	{{/transactions}}
+</ul>
