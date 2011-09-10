@@ -90,7 +90,17 @@ class View_Home_Index extends Kostache_Layout
 				)
 			);
 
-			$account_output['account_transactions'] = $transactions->payload;
+			$account_output['account_transactions'] = array();
+
+			foreach ($transactions->payload as $transaction)
+			{
+				$account_output['account_transactions'][] = array(
+					'date' => date('m/d/Y', $transaction->date),
+					'payee' => $transaction->payee,
+					'amount' => $transaction->amount,
+					'bucket' => Model_Bucket::factory('bucket', $transaction->bucket_id)->name,
+				);
+			}
 
 			$output[] = $account_output;
 		}

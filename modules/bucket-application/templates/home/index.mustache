@@ -1,34 +1,40 @@
-<h2>Accounts</h2>
-{{>accounts}}
-<h2>Buckets</h2>
-{{>buckets}}
-<h2>Transactions</h2>
-{{>transactions}}
-<h3>Add A Transaction</h3>
-<form action="" method="post" rel="api/transactions">
-	{{#add_transaction}}<dl>
-		<dt><label for="date">Date</label></dt>
-		<dd><input name="date" id="date" value="{{date}}" /></dd>
-		<dt><label for="amount">Amount</label></dt>
-		<dd><input name="amount" id="amount" value="{{amount}}" /></dd>
-		<dt><label for="memo">Memo</label></dt>
-		<dd><input name="memo" id="memo" value="{{memo}}" /></dd>
-		<dt><label for="payee">Payee</label></dt>
-		<dd><input name="payee" id="payee" value="{{payee}}" /></dd>
+<div id="buckets">
+	<h2>Accounts</h2>
+	{{>accounts}}
+	<h2>Buckets</h2>
+	{{>buckets}}
+</div>
+<div id="transactions">
+	<h2>Transactions</h2>
+	{{>transactions}}
+</div>
+<div id="transaction">
+	<h3>Add A Transaction</h3>
+	<form action="" method="post" rel="api/transactions">
+		{{#add_transaction}}<dl>
+			<dt><label for="date">Date</label></dt>
+			<dd><input name="date" id="date" value="{{date}}" /></dd>
+			<dt><label for="amount">Amount</label></dt>
+			<dd><input name="amount" id="amount" value="{{amount}}" /></dd>
+			<dt><label for="memo">Memo</label></dt>
+			<dd><input name="memo" id="memo" value="{{memo}}" /></dd>
+			<dt><label for="payee">Payee</label></dt>
+			<dd><input name="payee" id="payee" value="{{payee}}" /></dd>
 
-		<dt><label for="account">Account</label></dt>
-		<dd>
-			<select name="account" id="account">
-				{{#accounts}}<option value="{{id}}">{{name}}</option>{{/accounts}}
-			</select>
-		</dd>
+			<dt><label for="account">Account</label></dt>
+			<dd>
+				<select name="account" id="account">
+					{{#accounts}}<option value="{{id}}">{{name}}</option>{{/accounts}}
+				</select>
+			</dd>
 
-		<dt><label for="bucket">Bucket</label></dt>
-		<dd>
-			<select name="account" id="account">
-				{{#buckets}}<option value="{{id}}">{{name}}</option>{{/buckets}}
-			</select>
-		</dd>
-		<dd><input type="submit" value="Submit" /></dd>
-	</dl>{{/add_transaction}}
-</form>
+			<dt><label for="bucket">Bucket</label></dt>
+			<dd>
+				<select name="account" id="account">
+					{{#buckets}}<option value="{{id}}">{{name}}</option>{{/buckets}}
+				</select>
+			</dd>
+			<dd><input type="submit" value="Submit" /></dd>
+		</dl>{{/add_transaction}}
+	</form>
+</div>

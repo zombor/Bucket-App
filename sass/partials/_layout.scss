@@ -1,0 +1,18 @@
+@include eleven40-typography;
+
+body {
+	@include eleven40-row;
+}
+
+#buckets {
+	@include eleven40-threecol;
+}
+
+#transactions {
+	@include eleven40-sixcol;
+}
+
+#transaction {
+	@include eleven40-threecol;
+	@include eleven40-last;
+}
