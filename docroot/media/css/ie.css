@@ -1,4 +1,4 @@
-/* line 8, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
+/* line 8, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
 address, cite, code, del, dfn, em, img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -7,39 +7,39 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   padding: 0;
 }
 
-/* line 14, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
+/* line 14, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
 article, aside, figure, figure img, figcaption, hgroup, footer, header, nav, section,
 video, object {
   display: block;
 }
 
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
+/* line 17, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
 a img {
   border: 0;
 }
 
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
+/* line 20, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
 figure {
   position: relative;
 }
 
-/* line 23, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
+/* line 23, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
 figure img {
   width: 100%;
 }
 
-/* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
+/* line 27, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/reset/_utilities.scss */
 img, object, embed {
   max-width: 100%;
 }
 
 /* Type & image presets */
-/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 5, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 img, object, embed {
   margin-bottom: 20px;
 }
 
-/* line 9, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 9, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -49,7 +49,7 @@ body {
   /* Stops the iPhone scalling type up */
 }
 
-/* line 16, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 16, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 a {
   text-decoration: none;
   color: #005698;
@@ -57,19 +57,19 @@ a {
   border-bottom: 1px solid #adadad;
 }
 
-/* line 23, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 23, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 a:hover {
   color: #000;
   border-bottom: none;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 28, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 a img {
   display: block;
   /* Stops image links getting text link styles */
 }
 
-/* line 32, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 32, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 img {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -77,18 +77,18 @@ img {
   margin-bottom: 20px;
 }
 
-/* line 39, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 39, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 p, ul, ol, blockquote {
   margin-bottom: 24px;
   /* Changing this will break the baseline grid. */
 }
 
-/* line 43, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 43, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 li {
   margin-bottom: 6px;
 }
 
-/* line 47, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 47, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 blockquote {
   border-left: 1px solid #c1c1c1;
   color: #747474;
@@ -96,7 +96,7 @@ blockquote {
   margin-left: -15px;
 }
 
-/* line 54, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 54, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 h1 {
   font-size: 30px;
   line-height: 36px;
@@ -107,7 +107,7 @@ h1 {
   font-weight: lighter;
 }
 
-/* line 62, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 62, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 h2 {
   font-size: 20px;
   margin-bottom: 24px;
@@ -116,7 +116,7 @@ h2 {
   font-weight: lighter;
 }
 
-/* line 69, ../../../../../../Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
+/* line 69, /Library/Ruby/Gems/1.8/gems/eleven40-1.2/stylesheets/eleven40/_typography.scss */
 h3 {
   font-size: 16px;
   margin-bottom: 24px;
@@ -125,7 +125,7 @@ h3 {
   font-weight: lighter;
 }
 
-/* line 3, ../../../sass/partials/_layout.scss */
+/* line 3, /Volumes/Code/Bucket-App/sass/partials/_layout.scss */
 body {
   width: 100%;
   max-width: 1140px;
@@ -133,22 +133,22 @@ body {
   overflow: hidden;
 }
 
-/* line 7, ../../../sass/partials/_layout.scss */
-#buckets {
+/* line 7, /Volumes/Code/Bucket-App/sass/partials/_layout.scss */
+#left {
   width: 22.05%;
   margin-right: 3.8%;
   float: left;
 }
 
-/* line 11, ../../../sass/partials/_layout.scss */
-#transactions {
+/* line 11, /Volumes/Code/Bucket-App/sass/partials/_layout.scss */
+#center {
   width: 48%;
   margin-right: 3.8%;
   float: left;
 }
 
-/* line 15, ../../../sass/partials/_layout.scss */
-#transaction {
+/* line 15, /Volumes/Code/Bucket-App/sass/partials/_layout.scss */
+#right {
   width: 22.05%;
   margin-right: 3.8%;
   float: left;

@@ -16,10 +16,10 @@ return array(
 			// Override Redirect URI per provider
 			'redirect_uri'  => 'http://localhost/kohana/inbound/kohana',
 			'grant_type'    => OAuth2::GRANT_TYPE_CLIENT_CREDENTIALS,
-			'client_id'     => 'ce1d16fb-6d1a-45ba-81a4-c745dcfedee9',
-			'client_secret' => '548c0ba3-81a2-4ba4-9373-3db010878bb0',
-			'authorize_uri' => url::base(true, true).'oauth2/authorize',
-			'token_uri'     => url::base(true, true).'oauth2/token',
+			'client_id'     => 'd9cd5f18-8f67-4e20-9233-6752d1c5a8de',
+			'client_secret' => '19914b43-321a-4d95-b976-ebc2d4c98037',
+			'authorize_uri' => '/oauth2/authorize',
+			'token_uri'     => '/oauth2/token',
 		),
 	)
 );

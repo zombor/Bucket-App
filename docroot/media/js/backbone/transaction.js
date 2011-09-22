@@ -1,0 +1,1 @@
+var Transaction = Backbone.Model.extend({});
