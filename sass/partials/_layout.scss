@@ -4,15 +4,15 @@ body {
 	@include eleven40-row;
 }
 
-#buckets {
+#left {
 	@include eleven40-threecol;
 }
 
-#transactions {
+#center {
 	@include eleven40-sixcol;
 }
 
-#transaction {
+#right {
 	@include eleven40-threecol;
 	@include eleven40-last;
 }

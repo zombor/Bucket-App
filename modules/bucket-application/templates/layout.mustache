@@ -8,6 +8,7 @@
 		<script type="text/javascript" src="media/js/underscore-min.js"></script>
 		<script type="text/javascript" src="media/js/backbone-min.js"></script>
 		<script type="text/javascript" src="media/js/icanhaz.js"></script>
+		<script type="text/javascript" src="media/js/mustache.js"></script>
 		<script type="text/javascript" src="media/js/bucket_app.js"></script>
 		
 		<script type="text/javascript" src="media/js/backbone/transaction.js"></script>
@@ -32,8 +33,14 @@
 			</div>
 			<div id="center">
 				<h2>Transactions</h2>
-				<ul id="transactions">
-				</ul>
+				<table id="transactions">
+					<tr>
+						<th>Date</th>
+						<th>Payee</th>
+						<th>Bucket</th>
+						<th>Amount</th>
+					</tr>
+				</table>
 				<p><a href="#" id="add">Add</a></p>
 				<p><a href="#" id="remove">Remove</a></p>
 			</div>
@@ -43,7 +50,7 @@
 		</script>
 
 		<script id="template_transaction" type="text/html">
-			<li>\{\{date\}\} - {{payee}} - {{bucket}} - ${{amount}}</li>
+			{{#templates}}{{{transaction}}}{{/templates}}
 		</script>
 	</head>
 	<body>

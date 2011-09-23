@@ -11,8 +11,6 @@ abstract class Kostache extends Kohana_Kostache
 {
 	public $oauth_client;
 
-	public $date = 'foo';
-
 	/**
 	 * Gets the application's base url
 	 *
@@ -41,7 +39,7 @@ abstract class Kostache extends Kohana_Kostache
 	public function templates()
 	{
 		return array(
-			'app' => '',
+			'app' => file_get_contents(Kohana::find_file('templates', 'home/index', 'mustache')),
 			'transaction' => file_get_contents(Kohana::find_file('templates', 'transaction/transaction', 'mustache')),
 		);
 	}
