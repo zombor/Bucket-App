@@ -12,6 +12,11 @@ body {
 	@include eleven40-sixcol;
 }
 
+div#center table#transactions tr td, div#center table#transactions tr th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
 #right {
 	@include eleven40-threecol;
 	@include eleven40-last;

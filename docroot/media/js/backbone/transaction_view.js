@@ -9,17 +9,22 @@ var TransactionView = Backbone.View.extend(
 	},
 	events:
 	{
-		'dblclick td': 'handleDblClick',
+		'dblclick td'  : 'handleDblClick',
 		'keydown input': 'handleKeydown',
+		'click'        : 'handleRowClick'
 	},
 	render: function()
 	{
+		this.model.set({bucket: 'testing'});
 		$(this.el).html(ich.template_transaction(this.model.toJSON()));
 		return this;
 	},
 	changePayee: function()
 	{
 		this.$('.payee').text(this.model.get('payee'));
+	},
+	changeSelect: function()
+	{
 	},
 	handleDblClick: function(e)
 	{
@@ -38,6 +43,19 @@ var TransactionView = Backbone.View.extend(
 			var model_attributes = {};
 			model_attributes[klass] = val;
 			this.model.set(model_attributes);
+		}
+	},
+	handleRowClick: function(e)
+	{
+		if ($(this.el).hasClass('selected'))
+		{
+			$(this.el).removeClass('selected');
+			this.model.set({selected: false});
+		}
+		else
+		{
+			$(this.el).addClass('selected');
+			this.model.set({selected: true});
 		}
 	}
 });

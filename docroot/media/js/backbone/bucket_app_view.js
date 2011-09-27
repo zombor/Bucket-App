@@ -7,7 +7,8 @@ var BucketAppView = Backbone.View.extend(
 		this.model.transactions.bind('remove', this.removeTransaction);
 	},
 	events: {
-		'click #add': 'addTransactionLinkClick'
+		'click #add'   : 'addTransactionLinkClick',
+		'click #remove': 'removeTransactionLinkClick'
 	},
 	render: function()
 	{
@@ -20,9 +21,9 @@ var BucketAppView = Backbone.View.extend(
 	},
 	addTransaction: function(transaction)
 	{
-		var view = new TransactionView({model: transaction});
+		var view = new TransactionView({model: transaction, id: transaction.cid});
 
-		// here we use our stored reference to the movie list element and
+		// here we use our stored reference to the transaction list element and
 		// append our rendered movie view.
 		this.transactionList.append(view.render().el);
 	},
@@ -31,14 +32,24 @@ var BucketAppView = Backbone.View.extend(
 		// here we can use the html ID we stored to easily find
 		// and remove the correct element/elements from the view if the 
 		// collection tells us it's been removed.
-		this.$('#' + transaction.get('htmlId')).remove();
+		this.$('#' + transaction.cid).remove();
 	},
 	addTransactionLinkClick: function(transaction)
 	{
-		var view = new TransactionView({model: new Transaction});
+		this.model.transactions.add(transaction);
+	},
+	removeTransactionLinkClick: function()
+	{
+		var to_delete = this.model.transactions.select(
+			function(transaction)
+			{
+				if (transaction.get('selected'))
+				{
+					return true;
+				}
+			}
+		);
 
-		// here we use our stored reference to the movie list element and
-		// append our rendered movie view.
-		this.transactionList.append(view.render().el);
+		this.model.transactions.remove(to_delete);
 	}
 });

@@ -148,6 +148,12 @@ body {
 }
 
 /* line 15, /Volumes/Code/Bucket-App/sass/partials/_layout.scss */
+div#center table#transactions tr td, div#center table#transactions tr th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* line 20, /Volumes/Code/Bucket-App/sass/partials/_layout.scss */
 #right {
   width: 22.05%;
   margin-right: 3.8%;
