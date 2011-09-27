@@ -35,7 +35,7 @@ class Model_Bucket_Test extends PHPUnit_Framework_TestCase
 			$trans->save();
 		}
 
-		$this->assertSame(-45.00, $bucket->balance());
+		$this->assertSame("-45.00", $bucket->balance());
 
 		$this->assertSame(0.00, $bucket->balance(0));
 		$this->assertSame(-1.00, $bucket->balance(1));
@@ -55,6 +55,6 @@ class Model_Bucket_Test extends PHPUnit_Framework_TestCase
 		$trans->save();
 
 		// Oh noes, we are still overspent!
-		$this->assertSame(-35.00, $bucket->balance());
+		$this->assertSame("-35.00", $bucket->balance());
 	}
 }

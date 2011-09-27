@@ -79,6 +79,6 @@ class Model_Bucket extends AutoModeler_UUID
 			->as_object()
 			->execute()->current()->total;
 
-		return number_format($transaction_total+$bucket_total, 2)	;
+		return number_format($transaction_total+$bucket_total, 2);
 	}
 }
